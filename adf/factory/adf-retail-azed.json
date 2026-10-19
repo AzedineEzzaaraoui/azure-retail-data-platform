@@ -1,0 +1,15 @@
+{
+	"name": "adf-retail-azed",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "francecentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b64f3abe-6c78-4fbd-a3a3-975eafb93b7e",
+		"tenantId": "a757ebeb-35bc-451b-a30a-cb8cfa34764f"
+	}
+}
