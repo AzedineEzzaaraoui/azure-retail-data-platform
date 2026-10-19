@@ -1,0 +1,25 @@
+{
+	"name": "ds_azuresql_table",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_azuresql",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"schema_name": {
+				"type": "string",
+				"defaultValue": "dbo"
+			},
+			"table_name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "@dataset().schema_name",
+			"table": "@dataset().table_name"
+		}
+	}
+}
