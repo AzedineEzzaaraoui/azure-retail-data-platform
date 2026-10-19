@@ -1,0 +1,29 @@
+{
+	"name": "ds_adls_parquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adls",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"folder_path": {
+				"type": "string"
+			},
+			"file_name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "@dataset().file_name",
+				"folderPath": "@dataset().folder_path",
+				"fileSystem": "retail"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
