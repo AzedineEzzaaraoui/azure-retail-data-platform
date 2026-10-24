@@ -1,0 +1,37 @@
+{
+	"name": "pl_ingest_sql",
+	"properties": {
+		"activities": [
+			{
+				"name": "lkp_sql_tables",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.00:10:00",
+					"retry": 2,
+					"retryIntervalInSeconds": 60,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT TABLE_SCHEMA, TABLE_NAME\nFROM INFORMATION_SCHEMA.TABLES\nWHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_SCHEMA = 'dbo'",
+						"queryTimeout": "00:05:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "ds_azuresql_table",
+						"type": "DatasetReference",
+						"parameters": {
+							"schema_name": "dbo"
+						}
+					},
+					"firstRowOnly": false
+				}
+			}
+		],
+		"annotations": []
+	}
+}

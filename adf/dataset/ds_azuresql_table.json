@@ -11,15 +11,22 @@
 				"defaultValue": "dbo"
 			},
 			"table_name": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "products"
 			}
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "@dataset().schema_name",
-			"table": "@dataset().table_name"
+			"schema": {
+				"value": "@dataset().schema_name",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().table_name",
+				"type": "Expression"
+			}
 		}
 	}
 }
