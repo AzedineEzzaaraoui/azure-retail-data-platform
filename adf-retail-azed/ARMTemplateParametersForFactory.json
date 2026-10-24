@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-retail-azed"
+		},
+		"ls_adls_properties_typeProperties_url": {
+			"value": "https://stdbxpocazed2026.dfs.core.windows.net/"
+		},
+		"ls_azuresql_properties_typeProperties_server": {
+			"value": "sql-retail-azed.database.windows.net"
+		},
+		"ls_azuresql_properties_typeProperties_database": {
+			"value": "sqldb-retail"
+		},
+		"ls_azuresql_properties_typeProperties_userName": {
+			"value": "sqladmin"
+		},
+		"ls_http_github_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/AzedineEzzaaraoui/azure-retail-data-platform/main/"
+		},
+		"ls_keyvault_properties_typeProperties_baseUrl": {
+			"value": "https://kv-retail-azed.vault.azure.net/"
+		}
+	}
+}
